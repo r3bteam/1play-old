@@ -18,6 +18,6 @@
     "request": "^2.85.0",
     "simple-youtube-api": "^5.0.2",
     "youtube-info": "^1.2.0",
-    "ytdl-core": "^0.20.2"
+    "ytdl-core": "^0.28.0"
   }
 }
