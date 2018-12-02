@@ -39,7 +39,19 @@ client.on('ready', () => console.log('Yo this ready!'));
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
 
+client.on("ready", async () => {
+	console.log(`Bot is ready! ${client.user.username}`);
+	client.user.setActivity(`Type ${prefix}play`, {type: 'PLAYING'})
 
+
+	/*try {
+		let link = await bot.generateInvite(["ADMINISTRATOR"]);
+		console.log(link);
+	} catch (e) {
+		console.log(e.stack);
+	}*/
+
+});
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
 
