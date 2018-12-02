@@ -347,8 +347,6 @@ function play(guild, song) {
 
 	if (!song) {
 
-		serverQueue.voiceChannel.leave();
-
 		queue.delete(guild.id);
 
 		return;
@@ -436,7 +434,7 @@ client.on('message', message => {
 
 client.on('message', msg => {
 
-    if (msg.content == 'Ajoin') {
+    if (msg.content == '1join') {
         if (msg.member.voiceChannel) {
 
      if (msg.member.voiceChannel.joinable) {
