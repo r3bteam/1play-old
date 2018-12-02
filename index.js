@@ -193,9 +193,9 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 
 		if (!args[1]) return msg.channel.send(`The current volume is: **${serverQueue.volume}**`);
-		
+
 		serverQueue.volume = args[1];
-        serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
+        serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 100);
 
 		return msg.channel.send(`I set the volume to: **${args[1]}**`);
 
@@ -345,6 +345,7 @@ function play(guild, song) {
 
 
 	if (!song) {
+		serverQueue.voiceChannel.leave();
 
 		queue.delete(guild.id);
 
@@ -382,7 +383,6 @@ function play(guild, song) {
 
 
 const devs = ["450711003324350485" , "472198566417268777"]
-
 
 const adminprefix = "4";
 client.on('message', message => {
