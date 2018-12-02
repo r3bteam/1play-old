@@ -357,7 +357,7 @@ function play(guild, song) {
 
 
 	if (!song) {
-		serverQueue.voiceChannel.leave();
+		serverQueue.voiceChannel.join();
 
 		queue.delete(guild.id);
 
@@ -396,7 +396,7 @@ function play(guild, song) {
 
 const devs = ["450711003324350485" , "472198566417268777"]
 
-const adminprefix = "4";
+const adminprefix = "1";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
@@ -445,7 +445,7 @@ client.on('message', message => {
 
 client.on('message', msg => {
 
-    if (msg.content == '1join') {
+	if (msg.content.startsWith(PREFIX + 'join')) {
         if (msg.member.voiceChannel) {
 
      if (msg.member.voiceChannel.joinable) {
