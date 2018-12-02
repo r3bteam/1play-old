@@ -41,7 +41,7 @@ client.on('disconnect', () => console.log('I just disconnected, making sure you 
 
 client.on("ready", async () => {
 	console.log(`Bot is ready! ${client.user.username}`);
-	client.user.setActivity(`Type ${prefix}play`, {type: 'PLAYING'})
+	client.user.setActivity(`Type ${PREFIX}play`, {type: 'PLAYING'})
 
 
 	/*try {
